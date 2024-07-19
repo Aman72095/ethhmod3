@@ -8,8 +8,8 @@ Deployment on Local Hardhat Network
 Follow these steps to deploy token on local hardhat network using local pc (here i have used VS Code)
 
 Clone the repository and install its dependencies:
-git clone https://github.com/Rishav-27/ethavaxmodule3rishi.git
-cd ETH_AVAX-3Module.git
+git clone
+cd 
 npm install
 Install the @remix-project/remixd dependency to connect Remix IDE:
 npm install -g @remix-project/remixd
