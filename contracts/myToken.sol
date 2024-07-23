@@ -3,8 +3,8 @@ pragma solidity ^0.8.19;
 
 contract Token {
     // public variables here
-    string public tokenName = "LAKIENGS";
-    string public abbrv = "LKS";
+    string public tokenName = "AMANTOKEN";
+    string public abbrv = "AMT";
     uint public totalSupply = 0;
     address public owner;
 
