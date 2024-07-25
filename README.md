@@ -1,4 +1,4 @@
-### AMANTOKEN Smart Contract
+# AMANTOKEN Smart Contract
 
 A smart contract is written to create a token on local hardhat network and interact with the smart contract using remix IDE
 ## Overview
