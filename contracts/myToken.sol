@@ -1,18 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-contract Token {
-    // public variables here
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract AMANTOKEN is ERC20 {
+    // Public variables here
     string public tokenName = "AMANTOKEN";
     string public abbrv = "AMT";
-    uint public totalSupply = 0;
     address public owner;
 
-    // mapping variable here
-    mapping(address => uint) public balances;
-
-    // Constructor to set the owner
-    constructor() {
+    // Constructor to set the owner and initialize the ERC20 token
+    constructor() ERC20(tokenName, abbrv) {
         owner = msg.sender;
     }
 
@@ -28,26 +26,23 @@ contract Token {
         _;
     }
 
-    // mint function
+    // Mint function
     function mint(address _add, uint _val) public onlyOwner {
-        totalSupply += _val;
-        balances[_add] += _val;
+        _mint(_add, _val);
     }
 
-    // burn function
+    // Burn function
     function burn(address _add, uint _val) public onlyHolder(_add) {
-        require(balances[_add] >= _val, "Insufficient balance");
-
-        totalSupply -= _val;
-        balances[_add] -= _val;
+        require(balanceOf(_add) >= _val, "Insufficient balance");
+        _burn(_add, _val);
     }
 
-    // transfer function
-    function transfer(address _trans, uint _val) public {
+    // Transfer function
+    function transfer(address _trans, uint _val) public override returns (bool) {
         require(_trans != address(0), "Invalid address");
-        require(_val <= balances[msg.sender], "Insufficient balance");
+        require(_val <= balanceOf(msg.sender), "Insufficient balance");
         
-        balances[msg.sender] -= _val;
-        balances[_trans] += _val;
+        _transfer(msg.sender, _trans, _val);
+        return true;
     }
 }
