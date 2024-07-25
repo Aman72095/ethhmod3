@@ -43,8 +43,8 @@ Interacting with the Contract using Remix with Hardhat Provider
 
 -To mint tokens, call the mint function and provide the receiver's address and the desired amount. -To burn tokens, call the burn function and provide the amount to be burned.
 
-Authors
+* Authors
 Aman patel
 
-License
+* License
 This project is licensed under the MIT License - see the LICENSE.md file for details
