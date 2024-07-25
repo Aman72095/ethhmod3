@@ -1,4 +1,5 @@
-ETH-AVAX Create and Mint Token
+### AMANTOKEN Smart Contract
+
 A smart contract is written to create a token on local hardhat network and interact with the smart contract using remix IDE
 ## Overview
 The AMANTOKEN smart contract is an ERC20 token implementation using OpenZeppelin's ERC20 library. This contract allows the owner to mint tokens and any token holder to burn their own tokens. The token is named "AMANTOKEN" with the symbol "AMT".
